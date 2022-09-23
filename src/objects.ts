@@ -1,6 +1,3 @@
-import { constants } from "buffer";
-import { check } from "prettier";
-import { stringify } from "querystring";
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
@@ -23,7 +20,6 @@ export function makeBlankQuestion(
         points: 1,
         published: false
     };
-    //makeBlankQuestion(7, "ques1", "multiple_choice_question");
     return empQus;
 }
 
