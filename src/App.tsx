@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import handshake from "./logo192.png";
 import { Button, Col, Container, Row } from "react-bootstrap";
@@ -21,6 +21,8 @@ import { Quizzer } from "./quizzer/Quizzer";
 
 console.log(handshake);
 function App(): JSX.Element {
+    const [quizzer, setQuizzer] = useState<boolean>(true);
+
     return (
         <div className="App">
             <header className="App-header">
@@ -35,6 +37,16 @@ function App(): JSX.Element {
                     <Button onClick={() => console.log("Hello World!")}>
                         Log Hello World
                     </Button>
+                    <Button
+                        onClick={() => {
+                            setQuizzer(!quizzer);
+                        }}
+                    >
+                        {quizzer ? "Quizzer" : "Tasks"}
+                    </Button>
+                </div>
+                <div style={{ display: quizzer ? "block" : "none" }}>
+                    <Quizzer></Quizzer>
                 </div>
             </header>
             <h3>The list with three elements</h3>
